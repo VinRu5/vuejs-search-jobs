@@ -45,3 +45,11 @@ section.ad {
     padding-top: 12px;
     padding-bottom: 12px;
 }
+
+.ad-preferences .preferences .applied {
+    border: 1px #e3242b solid;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #e3242b;
+    font-weight: bold;
+}

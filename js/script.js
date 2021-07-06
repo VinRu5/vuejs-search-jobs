@@ -77,8 +77,15 @@ new Vue(
             
             addStarred: function(job) {
                 this.starred.push(job.id);
-                console.log(this.starred);
             },
+
+            applaiedPost: function (job) {
+                return this.applied.includes(job.id);
+            },
+
+            addApplaied: function(job) {
+                this.applied.push(job.id);
+            }
         }
 
     }

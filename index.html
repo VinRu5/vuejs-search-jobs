@@ -39,7 +39,8 @@
                         <div class="preferences">
                             <i v-if="starredPost(job)" class="fas fa-star"></i>
                             <i v-else @click="addStarred(job)" class="far fa-star"></i>
-                            <button class="btn btn-primary">Apply</button>
+                            <div v-if="applaiedPost(job)" class="applied">Applied</div>
+                            <button v-else @click="addApplaied(job)" class="btn btn-primary">Apply</button>
                         </div>
                     </div>
                 </section>
