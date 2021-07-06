@@ -11,18 +11,18 @@ new Vue(
                     position: 'Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/22/2021',
-                    logo: 'logo.jpg',
+                    logo: 'brand-logo.jpg',
                     city: 'Roma',
                     contract: 'Full Time',
                     active: false
                 },
                 {
                     id: 2,
-                    company: 'NTT Data',
+                    company: 'NT Data',
                     position: 'Web Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/28/2021',
-                    logo: 'logo.jpg',
+                    logo: 'N-logo.jpg',
                     city: 'Cosenza',
                     contract: 'Full Time',
                     active: false
@@ -33,7 +33,7 @@ new Vue(
                     position: 'Operaio',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '6/04/2021',
-                    logo: 'logo.jpg',
+                    logo: 'Logo-Fiat-2006.jpg',
                     city: 'Milano',
                     contract: 'Part Time',
                     active: false
@@ -44,7 +44,7 @@ new Vue(
                     position: 'Sistemista',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/16/2021',
-                    logo: 'logo.jpg',
+                    logo: 'vobislogo.webp',
                     city: 'Rimini',
                     contract: 'Part Time',
                     active: false
@@ -55,7 +55,7 @@ new Vue(
                     position: 'Full-stack Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/20/2021',
-                    logo: 'logo.jpg',
+                    logo: 'heart-logo.png',
                     city: 'Roma',
                     contract: 'Full Time',
                     active: false
@@ -66,7 +66,7 @@ new Vue(
                     position: 'Developer',
                     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam similique adipisci! Perferendis odio sapiente libero quam deleniti quidem consequuntur adipisci minima non iusto, sunt optio hic. Corporis, laboriosam perferendis?',
                     created_at: '5/22/2021',
-                    logo: 'logo.jpg',
+                    logo: 'siriologo.png',
                     city: 'Roma',
                     contract: 'Full Time',
                     active: false
@@ -77,12 +77,25 @@ new Vue(
 
         },
         methods: {
+            urlImg: function(job) {
+                return './img/' + job.logo;
+
+            },
+
             starredPost: function(job) {
                 return this.starred.includes(job.id);
             },
             
             addStarred: function(job) {
                 this.starred.push(job.id);
+            },
+
+            deleteStarred: function(job) {
+                if (this.starred.includes(job.id)) {
+                    let indexStarred = this.starred.indexOf(job.id);
+                    
+                    this.starred.splice(indexStarred, 1);
+                }
             },
 
             applaiedPost: function (job) {
