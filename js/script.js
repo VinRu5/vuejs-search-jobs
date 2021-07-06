@@ -96,13 +96,13 @@ new Vue(
                     text: 'Part Time',
                     value: 'Part Time'
                 }
-            ]
+            ],
+            view: true
 
         },
         methods: {
             urlImg: function(job) {
                 return './img/' + job.logo;
-
             },
 
             starredPost: function(job) {
@@ -114,7 +114,7 @@ new Vue(
             },
 
             deleteStarred: function(job) {
-                if (this.starred.includes(job.id)) {
+                if (this.starredPost(job)) {
                     let indexStarred = this.starred.indexOf(job.id);
                     
                     this.starred.splice(indexStarred, 1);
@@ -167,7 +167,7 @@ new Vue(
                 };
 
                 return false;
-            }
+            },
         }
 
     }

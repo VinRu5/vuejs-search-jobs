@@ -25,8 +25,8 @@
                 </div>
             </header>
 
-            <nav class="row">
-                <div class="selected-filter-container col-12">
+            <nav class="row selected-filter-container">
+                <div class="selected-filter-inner col-12">
                     <label for="selected-filter">Filtra per:</label>
                     <select v-model="selectedFilter" id="selected-filter">
                         <option v-for="option in optionsFilter" :value="option.value">{{ option.text }}</option>
@@ -35,33 +35,36 @@
             </nav>
 
             <main class="row">
-                <section v-for="(job, index) in jobs" v-if="viewFilter(index)" class="ad col-12">
-                    <div class="ad-info">
-                        <div class="logo-container">
-                            <img :src="urlImg(job)" alt="logo">
+                <div class="col">
+                    <section v-for="(job, index) in jobs" v-if="viewFilter(index)" class="ad col-12">
+                        <div class="ad-info">
+                            <div class="logo-container">
+                                <img :src="urlImg(job)" alt="logo">
+                            </div>
+                            <div class="company">{{ job.company }}</div>
+                            <div class="info">
+                                <div class="location">{{ job.city }}</div>
+                                <div class="date">{{ job.created_at }}</div>
+                            </div>
                         </div>
-                        <div class="company">{{ job.company }}</div>
-                        <div class="info">
-                            <div class="location">{{ job.city }}</div>
-                            <div class="date">{{ job.created_at }}</div>
+                        <div class="ad-text">
+                            {{ job.description }}
                         </div>
-                    </div>
-                    <div class="ad-text">
-                        {{ job.description }}
-                    </div>
-                    <div class="ad-preferences">
-                        <div class="contract">{{ job.contract }}</div>
-                        <div class="preferences">
-                            <i v-if="starredPost(job)" @click="deleteStarred(job)" class="fas fa-star selected"></i>
-                            <i v-else @click="addStarred(job)" class="fas fa-star no-selected"></i>
-                            <div v-if="applaiedPost(job)" class="applied">Applied</div>
-                            <button v-else @click="addApplaied(job, index)" class="btn btn-primary">Apply</button>
+                        <div class="ad-preferences">
+                            <div class="contract">{{ job.contract }}</div>
+                            <div class="preferences">
+                                <i v-if="starredPost(job)" @click="deleteStarred(job)" class="fas fa-star selected"></i>
+                                <i v-else @click="addStarred(job)" class="fas fa-star no-selected"></i>
+                                <div v-if="applaiedPost(job)" class="applied">Applied</div>
+                                <button v-else @click="addApplaied(job, index)" class="btn btn-primary">Apply</button>
+                            </div>
                         </div>
-                    </div>
-                    <div v-if="job.active" class="modal-applied">
-                       Candidatura Inviata Correttamente!
-                    </div>
-                </section>
+                        <div v-if="job.active" class="modal-applied">
+                           Candidatura Inviata Correttamente!
+                        </div>
+                    </section>
+                </div>
+                
             </main>
         </div>
         

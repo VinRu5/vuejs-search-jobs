@@ -24,7 +24,7 @@ header h1 {
 
 /*nav selected */
 .selected-filter-container {
-    text-align: center;
+    
     padding-top: 12px;
     padding-bottom: 12px;
     border-top: 1px solid #ccc ;
@@ -34,8 +34,16 @@ header h1 {
     box-shadow: 0 0 6px #ccc;
 }
 
-.selected-filter-container select, .selected-filter-container label {
+.selected-filter-inner {
+    text-align: center;
+}
+
+.selected-filter-inner select, .selected-filter-inner label {
     font-family: 'Oswald', sans-serif;  /*TODO: da sistemare*/
+}
+
+.selected-filter-inner i {
+    text-align: right;
 }
 
 
@@ -44,6 +52,7 @@ section.ad {
     border: 2px solid #666;
     border-radius: 5px;
     margin-bottom: 12px;
+    padding: 12px;
     position: relative;
     box-shadow: 0 0 6px #666;
 }
@@ -107,7 +116,7 @@ section.ad {
     cursor: pointer;
 }
 
-.preferences .selected {
+.selected {
     color: #fdd017;
 }
 
