@@ -37,7 +37,8 @@
                     <div class="ad-preferences">
                         <div class="contract">{{ job.contract }}</div>
                         <div class="preferences">
-                            <i class="fas fa-star"></i>
+                            <i v-if="starredPost(job)" class="fas fa-star"></i>
+                            <i v-else @click="addStarred(job)" class="far fa-star"></i>
                             <button class="btn btn-primary">Apply</button>
                         </div>
                     </div>

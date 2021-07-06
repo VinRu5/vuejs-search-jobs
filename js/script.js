@@ -69,6 +69,16 @@ new Vue(
             starred: [1, 2, 3],
             applied: [4, 5]
 
+        },
+        methods: {
+            starredPost: function(job) {
+                return this.starred.includes(job.id);
+            },
+            
+            addStarred: function(job) {
+                this.starred.push(job.id);
+                console.log(this.starred);
+            },
         }
 
     }
