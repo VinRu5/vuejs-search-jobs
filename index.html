@@ -17,26 +17,29 @@
                 <div class="img-container col-2">
                     <img src="./img/logo.jpg" alt="logo">
                 </div>
-                <h1 class="col-4">Search Jobs</h1>
+                <h1 class="col-6">Search Jobs</h1>
             </header>
             <main class="row">
-                <section class="ad col-12">
+                <section v-for="(job, index) in jobs" class="ad col-12">
                     <div class="ad-info">
                         <div class="logo-container">
                             <img src="./img/logo.jpg" alt="logo">
                         </div>
-                        <div class="company">Perifra</div>
+                        <div class="company">{{ job.company }}</div>
                         <div class="info">
-                            <div class="location">Roma</div>
-                            <div class="date">5/22/2021</div>
+                            <div class="location">{{ job.city }}</div>
+                            <div class="date">{{ job.created_at }}</div>
                         </div>
                     </div>
                     <div class="ad-text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, maxime libero placeat, quos officiis vero autem cum omnis nemo amet saepe atque. Aut doloribus error corrupti voluptas laboriosam, ipsum tenetur.
+                        {{ job.description }}
                     </div>
                     <div class="ad-preferences">
-                        <i class="fas fa-star"></i>
-                        <button class="btn btn-primary">Apply</button>
+                        <div class="contract">{{ job.contract }}</div>
+                        <div class="preferences">
+                            <i class="fas fa-star"></i>
+                            <button class="btn btn-primary">Apply</button>
+                        </div>
                     </div>
                 </section>
             </main>
