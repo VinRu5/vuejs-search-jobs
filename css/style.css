@@ -1,0 +1,46 @@
+img {
+    width: 100%;
+}
+
+
+/* Advertisement  */
+section.ad {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.ad .ad-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px #ccc solid;
+}
+
+.ad-info .logo-container {
+    flex-basis: 80px;
+}
+
+.ad-info .company {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 32px;
+}
+
+.ad-info .info {
+    flex-basis: 80px;
+    font-size: 14px;
+}
+
+.ad .ad-text {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.ad .ad-preferences {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px #ccc solid;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
