@@ -17,13 +17,25 @@
     <div id="app">
         <div class="container">
             <header class="row align-items-center justify-content-center">
-                <div class="img-container col-2">
-                    <img src="./img/logo.jpg" alt="logo">
+                <div class="title-page col-12">
+                    <div class="img-container">
+                        <img src="./img/logo.jpg" alt="logo">
+                    </div>
+                    <h1>Search Jobs</h1>
                 </div>
-                <h1 class="col-6">Search Jobs</h1>
             </header>
+
+            <nav class="row">
+                <div class="selected-filter-container col-12">
+                    <label for="selected-filter">Filtra per:</label>
+                    <select v-model="selectedFilter" id="selected-filter">
+                        <option v-for="option in optionsFilter" :value="option.value">{{ option.text }}</option>
+                    </select>
+                </div>
+            </nav>
+
             <main class="row">
-                <section v-for="(job, index) in jobs" class="ad col-12">
+                <section v-for="(job, index) in jobs" v-if="viewFilter(index)" class="ad col-12">
                     <div class="ad-info">
                         <div class="logo-container">
                             <img :src="urlImg(job)" alt="logo">

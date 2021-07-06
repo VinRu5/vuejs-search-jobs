@@ -6,10 +6,37 @@ img {
     width: 100%;
 }
 
+/* Title */
 header h1 {
     font-size: 50px;
     font-family: 'Oswald', sans-serif;
 }
+
+.img-container {
+    width: 150px;
+}
+
+.title-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* selected */
+.selected-filter-container {
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top: 1px solid #ccc ;
+    border-bottom: 1px solid #ccc ;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.selected-filter {
+    font-size: 'Oswald', sans-serif;  /*TODO: da sistemare*/
+}
+
 
 /* Advertisement  */
 section.ad {
@@ -75,6 +102,7 @@ section.ad {
 .preferences i {
     font-size: 18px;
     margin-right: 6px;
+    cursor: pointer;
 }
 
 .preferences .selected {

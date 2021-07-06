@@ -73,7 +73,22 @@ new Vue(
                 }
             ],
             starred: [1, 2, 3],
-            applied: [4, 5]
+            applied: [4, 5],
+            selectedFilter: 'all',
+            optionsFilter: [
+                {
+                    text: 'Tutti',
+                    value: 'all'
+                },
+                {
+                    text: 'I miei Preferiti',
+                    value: 'preferences'
+                },
+                {
+                    text: 'Le mie Candidature',
+                    value: 'applied'
+                }
+            ]
 
         },
         methods: {
@@ -117,6 +132,29 @@ new Vue(
                     }, 1000);
                     
                 }, 1000);
+            },
+
+            viewFilter: function(index) {
+
+                if (this.selectedFilter === 'all') {
+                    return true;
+                };
+
+                if (this.selectedFilter === 'preferences' ) {
+                 
+                    if (this.starred.includes(this.jobs[index].id)) {
+                        return true;
+                    }
+                };
+
+                if (this.selectedFilter === 'applied') {
+
+                    if (this.applied.includes(this.jobs[index].id)) {
+                        return true;
+                    }
+                };
+
+                return false;
             }
         }
 
