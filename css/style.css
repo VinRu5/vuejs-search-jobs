@@ -22,7 +22,7 @@ header h1 {
     justify-content: center;
 }
 
-/* selected */
+/*nav selected */
 .selected-filter-container {
     text-align: center;
     padding-top: 12px;
@@ -31,10 +31,11 @@ header h1 {
     border-bottom: 1px solid #ccc ;
     margin-top: 12px;
     margin-bottom: 12px;
+    box-shadow: 0 0 6px #ccc;
 }
 
-.selected-filter {
-    font-size: 'Oswald', sans-serif;  /*TODO: da sistemare*/
+.selected-filter-container select, .selected-filter-container label {
+    font-family: 'Oswald', sans-serif;  /*TODO: da sistemare*/
 }
 
 
@@ -44,6 +45,7 @@ section.ad {
     border-radius: 5px;
     margin-bottom: 12px;
     position: relative;
+    box-shadow: 0 0 6px #666;
 }
 
 .ad .ad-info {

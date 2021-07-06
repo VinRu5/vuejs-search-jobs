@@ -87,6 +87,14 @@ new Vue(
                 {
                     text: 'Le mie Candidature',
                     value: 'applied'
+                },
+                {
+                    text: 'Full Time',
+                    value: 'Full Time'
+                },
+                {
+                    text: 'Part Time',
+                    value: 'Part Time'
                 }
             ]
 
@@ -136,22 +144,26 @@ new Vue(
 
             viewFilter: function(index) {
 
-                if (this.selectedFilter === 'all') {
+                if (this.selectedFilter === this.optionsFilter[0].value) {
                     return true;
                 };
 
-                if (this.selectedFilter === 'preferences' ) {
+                if (this.selectedFilter === this.optionsFilter[1].value) {
                  
                     if (this.starred.includes(this.jobs[index].id)) {
                         return true;
                     }
                 };
 
-                if (this.selectedFilter === 'applied') {
+                if (this.selectedFilter === this.optionsFilter[2].value) {
 
                     if (this.applied.includes(this.jobs[index].id)) {
                         return true;
                     }
+                };
+
+                if (this.selectedFilter === this.jobs[index].contract) {
+                    return true;
                 };
 
                 return false;
