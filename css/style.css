@@ -1,10 +1,19 @@
+body {
+    /* font-family: 'Oswald', sans-serif; */
+}
+
 img {
     width: 100%;
 }
 
+header h1 {
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+}
+
 /* Advertisement  */
 section.ad {
-    border: 2px solid black;
+    border: 2px solid #666;
     border-radius: 5px;
     margin-bottom: 12px;
     position: relative;
@@ -15,6 +24,7 @@ section.ad {
     align-items: center;
     justify-content: center;
     border-bottom: 1px #ccc solid;
+    font-family: 'Oswald', sans-serif;
 }
 
 .ad-info .logo-container {
@@ -30,11 +40,13 @@ section.ad {
 .ad-info .info {
     flex-basis: 80px;
     font-size: 14px;
+    color: #777;
 }
 
 .ad .ad-text {
     margin-top: 24px;
     margin-bottom: 24px;
+    font-family: 'Bona Nova', serif;
 }
 
 .ad .ad-preferences {
@@ -44,6 +56,10 @@ section.ad {
     border-top: 1px #ccc solid;
     padding-top: 12px;
     padding-bottom: 12px;
+}
+
+.ad-preferences .contract {
+    font-family: 'Oswald', sans-serif;
 }
 
 .ad-preferences .preferences .applied {
