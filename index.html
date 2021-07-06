@@ -40,12 +40,14 @@
                             <i v-if="starredPost(job)" class="fas fa-star"></i>
                             <i v-else @click="addStarred(job)" class="far fa-star"></i>
                             <div v-if="applaiedPost(job)" class="applied">Applied</div>
-                            <button v-else @click="addApplaied(job)" class="btn btn-primary">Apply</button>
+                            <button v-else @click="addApplaied(job, index)" class="btn btn-primary">Apply</button>
                         </div>
+                    </div>
+                    <div v-if="job.active" class="modal-applied">
+                       Candidatura Inviata Correttamente!
                     </div>
                 </section>
             </main>
-            
         </div>
         
     </div>

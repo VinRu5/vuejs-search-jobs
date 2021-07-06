@@ -13,7 +13,8 @@ new Vue(
                     created_at: '5/22/2021',
                     logo: 'logo.jpg',
                     city: 'Roma',
-                    contract: 'Full Time'
+                    contract: 'Full Time',
+                    active: false
                 },
                 {
                     id: 2,
@@ -23,7 +24,8 @@ new Vue(
                     created_at: '5/28/2021',
                     logo: 'logo.jpg',
                     city: 'Cosenza',
-                    contract: 'Full Time'
+                    contract: 'Full Time',
+                    active: false
                 },
                 {
                     id: 3,
@@ -33,7 +35,8 @@ new Vue(
                     created_at: '6/04/2021',
                     logo: 'logo.jpg',
                     city: 'Milano',
-                    contract: 'Part Time'
+                    contract: 'Part Time',
+                    active: false
                 },
                 {
                     id: 4,
@@ -43,7 +46,8 @@ new Vue(
                     created_at: '5/16/2021',
                     logo: 'logo.jpg',
                     city: 'Rimini',
-                    contract: 'Part Time'
+                    contract: 'Part Time',
+                    active: false
                 },
                 {
                     id: 5,
@@ -53,7 +57,8 @@ new Vue(
                     created_at: '5/20/2021',
                     logo: 'logo.jpg',
                     city: 'Roma',
-                    contract: 'Full Time'
+                    contract: 'Full Time',
+                    active: false
                 },
                 {
                     id: 6,
@@ -63,7 +68,8 @@ new Vue(
                     created_at: '5/22/2021',
                     logo: 'logo.jpg',
                     city: 'Roma',
-                    contract: 'Full Time'
+                    contract: 'Full Time',
+                    active: false
                 }
             ],
             starred: [1, 2, 3],
@@ -83,8 +89,21 @@ new Vue(
                 return this.applied.includes(job.id);
             },
 
-            addApplaied: function(job) {
+            addApplaied: function(job, index) {
                 this.applied.push(job.id);
+
+                this.modalTime(index);
+            },
+
+            modalTime: function(index) {
+                setTimeout(() => {
+                    this.jobs[index].active = !this.jobs[index].active;
+
+                    setTimeout(() => {
+                        this.jobs[index].active = !this.jobs[index].active;
+                    }, 1000);
+                    
+                }, 1000);
             }
         }
 
